@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+	<title></title>
+</head>
+<body>
+
+	<div id="login">
+		<div class="loginbox">
+			<input type="text" name="name" placeholder="username" ><br><br>
+			<input type="password" name="password" placeholder="password"><br><br>
+			<button type="submit" id="logbtn">Log in</button>
+		</div>
+	</div>
+
+	<div id="body">
+		<h1>All tasks<span class="all_t"><span class="task_sum"></span><span class="task_cr"></span></span></h1>
+		<div id="tasks">
+			<ul>
+				<li id="options">
+					<div class="options">project name</div>
+					<div class="options">start date</div>
+					<div class="options">end date</div>
+					<div class="options">status</div>
+				</li>
+				<li>
+					<div class="box p_name">1. Round price at axis.ge</div>
+					<div class="box">11/07/2018</div>
+					<div class="box">11/07/2018</div>
+					<div class="box status done">done</div>
+				</li>
+				<li>
+					<div class="box p_name">2. Create personal portfolio design</div>
+					<div class="box">11/07/2018</div>
+					<div class="box">...</div>
+					<div class="box status active">active</div>
+				</li>
+				<li>
+					<div class="box p_name">3. Create TodoList with php and MySql</div>
+					<div class="box">11/07/2018</div>
+					<div class="box">...</div>
+					<div class="box status active">active</div>
+				</li>
+
+			</ul>
+		</div>
+		<footer>
+			created 11/07/2018
+		</footer>
+	</div>
+
+<!--
+	
+	module of task
+
+				<li>
+					<div class="box p_name">my first task</div>
+					<div class="box">11/07/2018</div>
+					<div class="box">11/07/2018</div>
+					<div class="box status active done failed">active</div>
+				</li>
+
+-->
+
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+		$('#logbtn').on('click' , function(){
+			var name = $("input[name = 'name']").val();
+			var pwd = $("input[name = 'password']").val();
+			if (name == 'luka' && pwd == 'test123') {
+				$('#login').fadeOut(1500);
+				setTimeout(function() {
+					$('#body').fadeIn(1500);
+				}, 1000);
+			}
+		})
+		var x = $('.task_sum');
+		var y = $('.task_cr');
+		var sumalldonetask = $('.done').length;
+		var sumallfailedtask = $('.failed').length;
+		var calcpersentage = sumalldonetask / ( sumalldonetask + sumallfailedtask ) * 100;
+		x.text('Issued order ( ' + (sumalldonetask + sumallfailedtask) + ' ) ');
+		y.text('Executed task (' + (calcpersentage.toFixed(1) + '%') + ' )' );
+		console.log(calcpersentage.toFixed(1));
+	})
+
+</script>
+
+</body>
+</html>

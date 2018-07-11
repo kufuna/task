@@ -1,0 +1,143 @@
+body {
+	margin: 0;
+	background: black;
+}
+* {
+	box-sizing: border-box;
+	font-family: 'Acme', sans-serif;
+}
+div#login {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: #1e414c;
+/*	display: none;*/
+}
+div.loginbox {
+	width: 50%;
+	margin: 100px auto;
+}
+div.loginbox input {
+	width: 100%;
+	font-size: 18px;
+	padding: 10px 20px;
+	border-radius: 20px;
+	border: none;
+	outline: none;
+	background: grey;
+	color: white;
+	cursor: pointer;
+}
+div.loginbox input::placeholder {
+	color: yellow;
+}
+div.loginbox button {
+	width: 250px;
+	margin: auto;
+	margin-left: 50%;
+	transform: translateX(-125px);
+	padding: 10px 0;
+	font-size: 18px;
+	background: #7b7b14;
+	color: white;
+	outline: none;
+	border: none;
+	border-radius: 10px;
+	transition: .3s;
+}
+div.loginbox button:active {
+	margin-top: 10px;
+	transition: .3s;
+}
+div#body {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: #752323;
+	display: none;
+}
+h1 {
+	text-align: center;
+	color: white;
+}
+h1 span {
+	font-size: 18px;
+}
+div#tasks {
+	width: 70%;
+	margin: auto;
+	max-height: 800px;
+	background: #ccbfbf;
+	border-radius: 20px;
+	box-shadow: inset 0 0 20px black;
+	overflow-y: auto;
+}
+ul {
+	margin: 0;
+	padding: 20px 0;
+}
+ul li {
+	font-size: 18px;
+	list-style: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	transition: background .3s;
+	border: 3px solid transparent;
+	border-width: 0 3px;
+}
+ul li:hover {
+	background: #aba0a0;
+	border-width: 0 3px;
+	border-color: black;
+	border-style: solid;
+}
+li#options:hover {
+	background: inherit;
+	cursor: default;
+	border-color: transparent;
+}
+li#options:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+li:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+div.options {
+	width: 25%;
+	float: left;
+	text-align: center;
+}
+div.box {
+	width: 25%;
+	float: left;
+	text-align: center;
+}
+div.p_name {
+	text-align: left;
+}
+div.active {
+	color: yellow;
+}
+div.failed {
+	color: red;
+}
+div.done {
+	color: green;
+}
+span.all_t {
+	margin-top: 24px;
+	margin-left: 100px;
+	position: absolute;
+	text-decoration: underline;
+}
+footer {
+	width: 70%;
+	margin: auto;
+	text-align: right;
+	color: #bbb;
+	padding: 10px;
+}
